@@ -10,7 +10,8 @@
     "react-images-upload": "^1.2.7",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
-    "react-spinners": "^0.6.1"
+    "react-spinners": "^0.6.1",
+    "webrtcsupport": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
