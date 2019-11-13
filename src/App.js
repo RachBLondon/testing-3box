@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import QR from "./demo-qr.png";
+import { BounceLoader } from 'react-spinners';
 
 import Box from "3box";
 import ThreeBoxComments from "3box-comments-react";
@@ -63,6 +64,11 @@ export default class App extends Component {
         <div>
           <img src={QR} />
         </div>
+        {(!this.state.accounts || !this.state.openedBox ) && (
+          <div style={{width : "60px", margin : "auto"}}>
+            <BounceLoader color="blue"/>
+        </div>
+        )}
         {this.state.accounts && this.state.openedBox && (
           <ThreeBoxComments
             // required
