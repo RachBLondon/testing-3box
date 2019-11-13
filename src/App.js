@@ -55,10 +55,7 @@ export default class App extends Component {
               margin: "auto"
             }}
           >
-            <threebox-address
-              data-address={this.state.accounts[0]}
-            ></threebox-address>
-            <ProfileHover address={this.state.accounts[0]} />
+            <ProfileHover address={this.state.accounts[0]} showName={true} noImgs={true} />
           </div>
         )}
         <div>
