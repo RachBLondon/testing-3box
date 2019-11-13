@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-// import logo from './logo.svg';
-import "./App.css";
+
 import Box from "3box";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 const getThreeBox = async (address) => {
   const profile = await Box.getProfile(address);
@@ -38,63 +36,14 @@ export default class App extends Component {
     }
 
     return (
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/profile">Profile</Link>
-              </li>
-              <li>
-                <Link to="/photos">Photos</Link>
-              </li>
-              <li>
-                <Link to="/messager">Messenger</Link>
-              </li>
-            </ul>
-          </nav>
+      <div>
+        <h1>3Box Demo</h1>
+        {this.state.needToAWeb3Browser && <h3>Use a Web3 Enabled Browser</h3>}
+        {this.state.accounts && <p>{this.state.accounts[0]}</p>}
+      </div>
 
-          {/* A <Switch> looks through its children <Route>s and
-              renders the first one that matches the current URL. */}
-          <Switch>
-            <Route path="/profile">
-              <Profile />
-            </Route>
-            <Route path="/messenger">
-              <Messenger />
-            </Route>
-            <Route path="/photos">
-              <Photos />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
     );
   }
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
-class Profile extends Component {
-  render() {
-    return <h2>Profile </h2>;
-  }
-}
-
-class Photos extends Component {
-  render() {
-    return <h2>Photos</h2>;
-  }
-}
-
-function Messenger() {
-  return <h2>Messenger</h2>;
-}
