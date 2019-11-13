@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import QR from './demo-qr.png';
 import ProfileHover from "profile-hover";
+
 
 import Box from "3box";
 
@@ -47,6 +49,7 @@ export default class App extends Component {
             <ProfileHover address={this.state.accounts[0]} />
           </div>
         )}
+        <img src={QR} />
       </div>
     );
   }
