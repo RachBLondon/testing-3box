@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import QR from "./demo-qr.png";
-import { BounceLoader } from 'react-spinners';
+import { BounceLoader } from "react-spinners";
 
 import Box from "3box";
 import ThreeBoxComments from "3box-comments-react";
 import ProfileHover from "profile-hover";
+import ChatBox from "3box-chatbox-react";
 
 const spaceName = "testing3Boxyeah!!";
 
@@ -55,27 +56,42 @@ export default class App extends Component {
               margin: "auto"
             }}
           >
-            <ProfileHover address={this.state.accounts[0]} showName={true} noImgs={true} />
+            <ProfileHover
+              address={this.state.accounts[0]}
+              showName={true}
+              noImgs={true}
+            />
           </div>
         )}
         <div>
           <img src={QR} />
         </div>
-        {(!this.state.accounts || !this.state.openedBox ) && (
-          <div style={{width : "60px", margin : "auto"}}>
-            <BounceLoader color="blue"/>
-        </div>
+        {(!this.state.accounts || !this.state.openedBox) && (
+          <div style={{ width: "60px", margin: "auto" }}>
+            <BounceLoader color="blue" />
+          </div>
         )}
         {this.state.accounts && this.state.openedBox && (
-          <ThreeBoxComments
-            // required
-            spaceName={spaceName}
-            threadName="myThreadName"
-            adminEthAddr={admin}
-            // Required props for context A) & B)
-            box={this.state.openedBox}
-            currentUserAddr={this.state.accounts[0]}
-          />
+          <div>
+            <ChatBox
+              // required
+              spaceName={spaceName}
+              threadName="myThreadNameyeah!!!!!!"
+              // Required props for context A) & B)
+              box={this.state.openedBox}
+              currentUserAddr={this.state.accounts[0]}
+            />
+
+            {/* <ThreeBoxComments
+              // required
+              spaceName={spaceName}
+              threadName="myThreadName"
+              adminEthAddr={admin}
+              // Required props for context A) & B)
+              box={this.state.openedBox}
+              currentUserAddr={this.state.accounts[0]}
+            /> */}
+          </div>
         )}
       </div>
     );

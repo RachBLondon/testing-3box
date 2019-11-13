@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "3box": "^1.13.1",
+    "3box-chatbox-react": "0.0.1-beta.11",
     "3box-comments-react": "0.0.1-beta.20",
     "profile-hover": "^1.1.1",
     "react": "^16.11.0",
